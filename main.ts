@@ -1,5 +1,6 @@
 namespace SpriteKind {
     export const Curseur = SpriteKind.create()
+    export const noirplayer = SpriteKind.create()
 }
 function PionBleu () {
     Pion1 = sprites.create(img`
@@ -154,6 +155,82 @@ function PionBleu () {
     tiles.placeOnTile(Pion6, tiles.getTileLocation(6, 2))
     tiles.placeOnTile(Pion7, tiles.getTileLocation(7, 2))
     tiles.placeOnTile(Pion8, tiles.getTileLocation(8, 2))
+    Tour1 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . 6 6 . 6 6 . 6 6 . . . . 
+        . . . . 6 6 . 6 6 . 6 6 . . . . 
+        . . . . 6 6 6 6 6 6 6 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 6 6 6 6 6 6 6 . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    tour2 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . 6 6 . 6 6 . 6 6 . . . . 
+        . . . . 6 6 . 6 6 . 6 6 . . . . 
+        . . . . 6 6 6 6 6 6 6 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 6 6 6 6 6 6 6 . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    Cheval1 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . 6 6 6 6 6 6 6 . . . . 
+        . . . . 6 6 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 6 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 6 6 . . . . 
+        . . . . 6 8 8 8 8 6 6 . . . . . 
+        . . . . 6 8 8 8 8 6 . . . . . . 
+        . . . . 6 8 8 8 8 6 . . . . . . 
+        . . . . 6 8 8 8 8 6 . . . . . . 
+        . . 6 6 6 8 8 8 8 6 6 6 . . . . 
+        . . 6 8 8 8 8 8 8 8 8 6 . . . . 
+        . . 6 8 8 8 8 8 8 8 8 6 . . . . 
+        . . 6 8 8 8 8 8 8 8 8 6 . . . . 
+        . . 6 6 6 6 6 6 6 6 6 6 . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    Cheval2 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . 6 6 6 6 6 6 6 . . . . 
+        . . . . 6 6 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 6 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 8 6 . . . . 
+        . . . . 6 8 8 8 8 8 6 6 . . . . 
+        . . . . 6 8 8 8 8 6 6 . . . . . 
+        . . . . 6 8 8 8 8 6 . . . . . . 
+        . . . . 6 8 8 8 8 6 . . . . . . 
+        . . . . 6 8 8 8 8 6 . . . . . . 
+        . . 6 6 6 8 8 8 8 6 6 6 . . . . 
+        . . 6 8 8 8 8 8 8 8 8 6 . . . . 
+        . . 6 8 8 8 8 8 8 8 8 6 . . . . 
+        . . 6 8 8 8 8 8 8 8 8 6 . . . . 
+        . . 6 6 6 6 6 6 6 6 6 6 . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    tiles.placeOnTile(Tour1, tiles.getTileLocation(1, 1))
+    tiles.placeOnTile(tour2, tiles.getTileLocation(8, 1))
+    tiles.placeOnTile(Cheval1, tiles.getTileLocation(2, 1))
+    tiles.placeOnTile(Cheval2, tiles.getTileLocation(7, 1))
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (curseuringame.overlapsWith(Pion1)) {
@@ -209,7 +286,7 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.noirplayer)
     Pion2N = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . 2 2 2 2 . . . . . . 
@@ -227,7 +304,7 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.noirplayer)
     Pion3N = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . 2 2 2 2 . . . . . . 
@@ -245,7 +322,7 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.noirplayer)
     Pion4N = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . 2 2 2 2 . . . . . . 
@@ -263,7 +340,7 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.noirplayer)
     Pion5N = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . 2 2 2 2 . . . . . . 
@@ -281,7 +358,7 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.noirplayer)
     Pion6N = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . 2 2 2 2 . . . . . . 
@@ -299,7 +376,7 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.noirplayer)
     Pion7N = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . 2 2 2 2 . . . . . . 
@@ -317,7 +394,7 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.noirplayer)
     Pion8N = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . 2 2 2 2 . . . . . . 
@@ -335,7 +412,7 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Player)
+        `, SpriteKind.noirplayer)
     tiles.placeOnTile(Pion1N, tiles.getTileLocation(1, 7))
     tiles.placeOnTile(Pion2N, tiles.getTileLocation(2, 7))
     tiles.placeOnTile(Pion3N, tiles.getTileLocation(3, 7))
@@ -389,6 +466,10 @@ let Pion4N: Sprite = null
 let Pion3N: Sprite = null
 let Pion2N: Sprite = null
 let Pion1N: Sprite = null
+let Cheval2: Sprite = null
+let Cheval1: Sprite = null
+let tour2: Sprite = null
+let Tour1: Sprite = null
 let Pion8: Sprite = null
 let Pion7: Sprite = null
 let Pion6: Sprite = null
