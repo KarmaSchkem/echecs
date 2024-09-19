@@ -147,14 +147,14 @@ function PionBleu () {
         . . . . 8 8 8 8 8 8 8 8 . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Player)
-    tiles.placeOnTile(Pion1, tiles.getTileLocation(1, 2))
-    tiles.placeOnTile(Pion2, tiles.getTileLocation(2, 2))
-    tiles.placeOnTile(Pion3, tiles.getTileLocation(3, 2))
-    tiles.placeOnTile(Pion4, tiles.getTileLocation(4, 2))
-    tiles.placeOnTile(Pion5, tiles.getTileLocation(5, 2))
-    tiles.placeOnTile(Pion6, tiles.getTileLocation(6, 2))
-    tiles.placeOnTile(Pion7, tiles.getTileLocation(7, 2))
-    tiles.placeOnTile(Pion8, tiles.getTileLocation(8, 2))
+    tiles.placeOnTile(Pion1, tiles.getTileLocation(3, 2))
+    tiles.placeOnTile(Pion2, tiles.getTileLocation(4, 2))
+    tiles.placeOnTile(Pion3, tiles.getTileLocation(5, 2))
+    tiles.placeOnTile(Pion4, tiles.getTileLocation(6, 2))
+    tiles.placeOnTile(Pion5, tiles.getTileLocation(7, 2))
+    tiles.placeOnTile(Pion6, tiles.getTileLocation(8, 2))
+    tiles.placeOnTile(Pion7, tiles.getTileLocation(9, 2))
+    tiles.placeOnTile(Pion8, tiles.getTileLocation(10, 2))
     Tour1 = sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . 6 6 . 6 6 . 6 6 . . . . 
@@ -227,10 +227,86 @@ function PionBleu () {
         . . 6 6 6 6 6 6 6 6 6 6 . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.Player)
-    tiles.placeOnTile(Tour1, tiles.getTileLocation(1, 1))
-    tiles.placeOnTile(tour2, tiles.getTileLocation(8, 1))
-    tiles.placeOnTile(Cheval1, tiles.getTileLocation(2, 1))
-    tiles.placeOnTile(Cheval2, tiles.getTileLocation(7, 1))
+    tiles.placeOnTile(Tour1, tiles.getTileLocation(3, 1))
+    tiles.placeOnTile(tour2, tiles.getTileLocation(10, 1))
+    tiles.placeOnTile(Cheval1, tiles.getTileLocation(4, 1))
+    tiles.placeOnTile(Cheval2, tiles.getTileLocation(9, 1))
+    fou1 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 6 6 . . . . . . . 
+        . . . . . . 6 8 8 6 . . . . . . 
+        . . . . . . 6 8 8 6 . . . . . . 
+        . . . . . . . 6 6 . . . . . . . 
+        . . . . . . 6 8 8 6 . . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . 6 . . . 6 8 8 6 . . . 6 . . 
+        . . . 6 . . . 6 6 . . . 6 . . . 
+        . . . . 6 . 6 8 8 6 . 6 . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . . 6 6 6 6 . . . . . . 
+        `, SpriteKind.Player)
+    fou2 = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 6 6 . . . . . . . 
+        . . . . . . 6 8 8 6 . . . . . . 
+        . . . . . . 6 8 8 6 . . . . . . 
+        . . . . . . . 6 6 . . . . . . . 
+        . . . . . . 6 8 8 6 . . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . 6 . . . 6 8 8 6 . . . 6 . . 
+        . . . 6 . . . 6 6 . . . 6 . . . 
+        . . . . 6 . 6 8 8 6 . 6 . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . 6 8 8 8 8 6 . . . . . 
+        . . . . . . 6 6 6 6 . . . . . . 
+        `, SpriteKind.Player)
+    roi = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 6 6 . . . . . . . 
+        . . . . 6 6 6 5 5 6 6 6 . . . . 
+        . . . 6 2 2 2 6 6 2 2 2 6 . . . 
+        . . . 6 2 2 2 6 6 2 2 2 6 . . . 
+        . . . 6 2 2 2 6 6 2 2 2 6 . . . 
+        . . . 6 2 2 2 6 6 2 2 2 6 . . . 
+        . . 6 6 6 2 6 6 6 6 2 6 6 6 . . 
+        . . 6 5 6 2 6 5 5 6 2 6 5 6 . . 
+        . . 6 5 6 6 6 5 5 6 6 6 5 6 . . 
+        . . 6 5 5 5 5 5 5 5 5 5 5 6 . . 
+        . . 6 5 5 5 5 8 8 5 5 5 5 6 . . 
+        . . 6 5 5 5 5 8 8 5 5 5 5 6 . . 
+        . . 6 6 6 6 6 6 6 6 6 6 6 6 . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    Reine = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . 6 6 6 . 6 6 6 6 . 6 6 6 . . 
+        . . 6 5 6 . 6 5 5 6 . 6 5 6 . . 
+        . . 6 5 6 6 6 5 5 6 6 6 5 6 . . 
+        . . 6 5 5 5 5 5 5 5 5 5 5 6 . . 
+        . . 6 5 5 5 5 8 8 5 5 5 5 6 . . 
+        . . 6 5 5 5 5 8 8 5 5 5 5 6 . . 
+        . . 6 6 6 6 6 6 6 6 6 6 6 6 . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    tiles.placeOnTile(fou1, tiles.getTileLocation(5, 1))
+    tiles.placeOnTile(fou2, tiles.getTileLocation(8, 1))
+    tiles.placeOnTile(Reine, tiles.getTileLocation(7, 1))
+    tiles.placeOnTile(roi, tiles.getTileLocation(6, 1))
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (curseuringame.overlapsWith(Pion1)) {
@@ -413,14 +489,166 @@ function PionRouge () {
         . . . . 3 3 3 3 3 3 3 3 . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.noirplayer)
-    tiles.placeOnTile(Pion1N, tiles.getTileLocation(1, 7))
-    tiles.placeOnTile(Pion2N, tiles.getTileLocation(2, 7))
-    tiles.placeOnTile(Pion3N, tiles.getTileLocation(3, 7))
-    tiles.placeOnTile(Pion4N, tiles.getTileLocation(4, 7))
-    tiles.placeOnTile(Pion5N, tiles.getTileLocation(5, 7))
-    tiles.placeOnTile(Pion6N, tiles.getTileLocation(6, 7))
-    tiles.placeOnTile(Pion7N, tiles.getTileLocation(7, 7))
-    tiles.placeOnTile(Pion8N, tiles.getTileLocation(8, 7))
+    tiles.placeOnTile(Pion1N, tiles.getTileLocation(3, 7))
+    tiles.placeOnTile(Pion2N, tiles.getTileLocation(4, 7))
+    tiles.placeOnTile(Pion3N, tiles.getTileLocation(5, 7))
+    tiles.placeOnTile(Pion4N, tiles.getTileLocation(6, 7))
+    tiles.placeOnTile(Pion5N, tiles.getTileLocation(7, 7))
+    tiles.placeOnTile(Pion6N, tiles.getTileLocation(8, 7))
+    tiles.placeOnTile(Pion7N, tiles.getTileLocation(9, 7))
+    tiles.placeOnTile(Pion8N, tiles.getTileLocation(10, 7))
+    tour1n = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . 2 2 . 2 2 . 2 2 . . . . 
+        . . . . 2 2 . 2 2 . 2 2 . . . . 
+        . . . . 2 2 2 2 2 2 2 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 2 2 2 2 2 2 2 . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    tour2n = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . 2 2 . 2 2 . 2 2 . . . . 
+        . . . . 2 2 . 2 2 . 2 2 . . . . 
+        . . . . 2 2 2 2 2 2 2 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 2 2 2 2 2 2 2 . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    cheval1n = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . 2 2 2 2 2 2 2 . . . . 
+        . . . . 2 2 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 2 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 2 2 . . . . 
+        . . . . 2 3 3 3 3 2 2 . . . . . 
+        . . . . 2 3 3 3 3 2 . . . . . . 
+        . . . . 2 3 3 3 3 2 . . . . . . 
+        . . . . 2 3 3 3 3 2 . . . . . . 
+        . . 2 2 2 3 3 3 3 2 2 2 . . . . 
+        . . 2 3 3 3 3 3 3 3 3 2 . . . . 
+        . . 2 3 3 3 3 3 3 3 3 2 . . . . 
+        . . 2 3 3 3 3 3 3 3 3 2 . . . . 
+        . . 2 2 2 2 2 2 2 2 2 2 . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    cheval2n = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . 2 2 2 2 2 2 2 . . . . 
+        . . . . 2 2 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 2 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 3 2 . . . . 
+        . . . . 2 3 3 3 3 3 2 2 . . . . 
+        . . . . 2 3 3 3 3 2 2 . . . . . 
+        . . . . 2 3 3 3 3 2 . . . . . . 
+        . . . . 2 3 3 3 3 2 . . . . . . 
+        . . . . 2 3 3 3 3 2 . . . . . . 
+        . . 2 2 2 3 3 3 3 2 2 2 . . . . 
+        . . 2 3 3 3 3 3 3 3 3 2 . . . . 
+        . . 2 3 3 3 3 3 3 3 3 2 . . . . 
+        . . 2 3 3 3 3 3 3 3 3 2 . . . . 
+        . . 2 2 2 2 2 2 2 2 2 2 . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    tiles.placeOnTile(tour1n, tiles.getTileLocation(3, 8))
+    tiles.placeOnTile(tour2n, tiles.getTileLocation(10, 8))
+    tiles.placeOnTile(cheval1n, tiles.getTileLocation(4, 8))
+    tiles.placeOnTile(cheval2n, tiles.getTileLocation(9, 8))
+    fou1n = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . 2 3 3 2 . . . . . . 
+        . . . . . . 2 3 3 2 . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . 2 3 3 2 . . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . 2 . . . 2 3 3 2 . . . 2 . . 
+        . . . 2 . . . 2 2 . . . 2 . . . 
+        . . . . 2 . 2 3 3 2 . 2 . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . . 2 2 2 2 . . . . . . 
+        `, SpriteKind.Player)
+    fou2n = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . 2 3 3 2 . . . . . . 
+        . . . . . . 2 3 3 2 . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . . . 2 3 3 2 . . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . 2 . . . 2 3 3 2 . . . 2 . . 
+        . . . 2 . . . 2 2 . . . 2 . . . 
+        . . . . 2 . 2 3 3 2 . 2 . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . 2 3 3 3 3 2 . . . . . 
+        . . . . . . 2 2 2 2 . . . . . . 
+        `, SpriteKind.Player)
+    roiN = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 2 2 . . . . . . . 
+        . . . . 2 2 2 5 5 2 2 2 . . . . 
+        . . . 2 6 6 6 2 2 6 6 6 2 . . . 
+        . . . 2 6 6 6 2 2 6 6 6 2 . . . 
+        . . . 2 6 6 6 2 2 6 6 6 2 . . . 
+        . . . 2 6 6 6 2 2 6 6 6 2 . . . 
+        . . 2 2 2 6 2 2 2 2 6 2 2 2 . . 
+        . . 2 5 2 6 2 5 5 2 6 2 5 2 . . 
+        . . 2 5 2 2 2 5 5 2 2 2 5 2 . . 
+        . . 2 5 5 5 5 5 5 5 5 5 5 2 . . 
+        . . 2 5 5 5 5 8 8 5 5 5 5 2 . . 
+        . . 2 5 5 5 5 8 8 5 5 5 5 2 . . 
+        . . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    reineN = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . 2 2 2 . 2 2 2 2 . 2 2 2 . . 
+        . . 2 5 2 . 2 5 5 2 . 2 5 2 . . 
+        . . 2 5 2 2 2 5 5 2 2 2 5 2 . . 
+        . . 2 5 5 5 5 5 5 5 5 5 5 2 . . 
+        . . 2 5 5 5 5 8 8 5 5 5 5 2 . . 
+        . . 2 5 5 5 5 8 8 5 5 5 5 2 . . 
+        . . 2 2 2 2 2 2 2 2 2 2 2 2 . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    tiles.placeOnTile(fou1n, tiles.getTileLocation(5, 8))
+    tiles.placeOnTile(fou2n, tiles.getTileLocation(8, 8))
+    tiles.placeOnTile(reineN, tiles.getTileLocation(7, 8))
+    tiles.placeOnTile(roiN, tiles.getTileLocation(6, 8))
 }
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (curseuringame.overlapsWith(Pion1)) {
@@ -458,6 +686,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         Pion8N.follow(curseuringame, 0)
     }
 })
+let reineN: Sprite = null
+let roiN: Sprite = null
+let fou2n: Sprite = null
+let fou1n: Sprite = null
+let cheval2n: Sprite = null
+let cheval1n: Sprite = null
+let tour2n: Sprite = null
+let tour1n: Sprite = null
 let Pion8N: Sprite = null
 let Pion7N: Sprite = null
 let Pion6N: Sprite = null
@@ -466,6 +702,10 @@ let Pion4N: Sprite = null
 let Pion3N: Sprite = null
 let Pion2N: Sprite = null
 let Pion1N: Sprite = null
+let Reine: Sprite = null
+let roi: Sprite = null
+let fou2: Sprite = null
+let fou1: Sprite = null
 let Cheval2: Sprite = null
 let Cheval1: Sprite = null
 let tour2: Sprite = null
@@ -480,7 +720,7 @@ let Pion2: Sprite = null
 let Pion1: Sprite = null
 let curseuringame: Sprite = null
 namespace userconfig {
-    export const ARCADE_SCREEN_WIDTH = 160
+    export const ARCADE_SCREEN_WIDTH = 224
     export const ARCADE_SCREEN_HEIGHT = 160
 }
 tiles.setCurrentTilemap(tilemap`niveau2`)
